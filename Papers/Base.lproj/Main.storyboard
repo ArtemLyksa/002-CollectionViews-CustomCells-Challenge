@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="O5B-Aa-xCZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="O5B-Aa-xCZ">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -50,16 +50,46 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3f9-jc-MCm">
                                             <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                         </imageView>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mn8-7l-Wgs" customClass="GradientView" customModule="Papers" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="170" width="200" height="30"/>
+                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="RXE-5Q-PLd"/>
+                                            </constraints>
+                                        </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0XP-qb-aA3">
+                                            <rect key="frame" x="0.0" y="179" width="200" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="BCJ-WN-a5s"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
+                                    <constraint firstItem="0XP-qb-aA3" firstAttribute="leading" secondItem="Aqe-CW-8BC" secondAttribute="leading" id="2BK-Tx-rhq"/>
+                                    <constraint firstAttribute="bottom" secondItem="Mn8-7l-Wgs" secondAttribute="bottom" id="9hy-cN-vdD"/>
+                                    <constraint firstAttribute="bottom" secondItem="0XP-qb-aA3" secondAttribute="bottom" id="Dw0-5c-8Xm"/>
                                     <constraint firstItem="3f9-jc-MCm" firstAttribute="leading" secondItem="Aqe-CW-8BC" secondAttribute="leading" id="HOc-Eh-mVv"/>
+                                    <constraint firstItem="Mn8-7l-Wgs" firstAttribute="leading" secondItem="Aqe-CW-8BC" secondAttribute="leading" id="MEE-h0-ctg"/>
                                     <constraint firstItem="3f9-jc-MCm" firstAttribute="top" secondItem="Aqe-CW-8BC" secondAttribute="top" id="MbY-YK-dpC"/>
+                                    <constraint firstAttribute="trailing" secondItem="Mn8-7l-Wgs" secondAttribute="trailing" id="PSH-Lr-cJk"/>
                                     <constraint firstAttribute="trailing" secondItem="3f9-jc-MCm" secondAttribute="trailing" id="VGn-qy-le6"/>
+                                    <constraint firstAttribute="trailing" secondItem="0XP-qb-aA3" secondAttribute="trailing" id="ZhA-Fs-lJz"/>
+                                    <constraint firstItem="Mn8-7l-Wgs" firstAttribute="top" secondItem="0XP-qb-aA3" secondAttribute="bottom" id="cnW-wg-Uq1"/>
                                     <constraint firstAttribute="bottom" secondItem="3f9-jc-MCm" secondAttribute="bottom" id="lSv-oC-KCY"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="cnW-wg-Uq1"/>
+                                    </mask>
+                                </variation>
                                 <connections>
+                                    <outlet property="captionLabel" destination="0XP-qb-aA3" id="CaT-WV-JW3"/>
+                                    <outlet property="gradientView" destination="Mn8-7l-Wgs" id="obR-yz-snq"/>
                                     <outlet property="paperImageView" destination="3f9-jc-MCm" id="kVQ-1d-sRi"/>
                                 </connections>
                             </collectionViewCell>
@@ -76,7 +106,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="axu-DK-xeK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="929" y="467"/>
+            <point key="canvasLocation" x="1030" y="467"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="Dhm-JO-PAf">
